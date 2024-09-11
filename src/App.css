@@ -1,11 +1,12 @@
-/* Reseta margens, padding e define box-sizing */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #ffffff
 }
 
-/* Define altura mínima e estilo básico para o body */
+
 html,
 body {
   height: 100%;
@@ -14,25 +15,23 @@ body {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  background: linear-gradient(to right, #999999, #868686);
-  /* Preto e roxo */
-  color: #40078b;
-  /* Cor clara para o texto */
+  background: linear-gradient(to right, #d4d4d49d #b3b1b1ec);
+  color: #8400ff69;
+
   display: flex;
   flex-direction: column;
 }
 
-/* Container principal para empurrar o rodapé para baixo */
+
 .page-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* Estilos do cabeçalho e navbar */
 .header {
   background: #212121;
-  /* Preto escuro */
+ 
 }
 
 .navbar {
@@ -41,11 +40,20 @@ body {
   align-items: center;
   padding: 1rem 2rem;
 }
-
+main {
+  width: 100%;
+  padding: 20px
+}
+.content{
+  display: grid;
+  place-items: center;
+  align-items: center;
+  
+}
 .logo {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #d1cdcd;
+  color: #ffffff;
 }
 
 .nav-links {
@@ -59,15 +67,15 @@ body {
 }
 
 .nav-links a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #3d3b3b;
-  /* Roxo mais claro */
+  color: #ffffff;
+
 }
 
 .menu-toggle {
@@ -83,13 +91,13 @@ body {
   margin: 4px 0;
 }
 
-/* Seção principal */
+
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: #333;
-  /* Fundo escuro para contraste */
-  color: #050000;
+  background: #000000;
+
+  color: #ffffff;
 }
 
 .hero h1 {
@@ -101,11 +109,11 @@ body {
   font-size: 1.2rem;
 }
 
-/* Estilos das seções */
+
 .section {
   padding: 2rem;
   margin: 1rem 0;
-  background: #212121;
+  background: #000000;
   color: #f0f0f0;
 }
 
@@ -113,7 +121,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Estilos do rodapé */
+
 .footer {
   background-color: #212121;
   color: #f0f0f0;
@@ -123,7 +131,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .nav-links {
     display: none;

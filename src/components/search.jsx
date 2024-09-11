@@ -23,11 +23,11 @@ const SearchBar = () => {
         name="search"
         value={query}
         onChange={handleChange}
-        placeholder="Search for turmas..."
+        placeholder="Procurando por turmas..."
       />
       <button onClick={handleSearchClick}>Search</button>
       {searchClicked && query && (
-        <FetchData title="Turma Requisitada" endpoint={`turmas/search/${query}`} />
+        <FetchData title="Turma" endpoint={`turmas/search/${query}`} />
       )}
     </div>
   );

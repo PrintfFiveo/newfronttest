@@ -13,9 +13,9 @@ function App() {
       
       <NavBar/>
        <CustomCursor></CustomCursor>
-      <main className="content">
-        <h1>Bem-Vindo</h1>
-        <SearchBar></SearchBar>
+        <main className="content">
+            <h1>Pesquisar Turmas</h1>
+            <SearchBar></SearchBar>
       
       </main>
       <Footer />
