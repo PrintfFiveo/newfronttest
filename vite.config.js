@@ -11,6 +11,7 @@ export default defineConfig({
         Presencas: 'src/Presencas/Presencas.jsx',
         Postagem: 'src/Postagem/Postagem.jsx',
       },
+      base: '/FrontendExpo',
     },
   },
 })
