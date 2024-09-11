@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #ffffff
+
 }
 
 
@@ -31,6 +31,7 @@ body {
 
 .header {
   background: #212121;
+  color: white;
  
 }
 
@@ -97,7 +98,7 @@ main {
   padding: 4rem 2rem;
   background: #000000;
 
-  color: #ffffff;
+  color: #000000;
 }
 
 .hero h1 {
@@ -114,7 +115,7 @@ main {
   padding: 2rem;
   margin: 1rem 0;
   background: #000000;
-  color: #f0f0f0;
+  color: #000000;
 }
 
 .section h2 {
@@ -124,7 +125,7 @@ main {
 
 .footer {
   background-color: #212121;
-  color: #f0f0f0;
+  color: #000000;
   text-align: center;
   padding: 10px;
   width: 100%;

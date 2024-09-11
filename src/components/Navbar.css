@@ -67,7 +67,7 @@
 }
 
 .nav-links a {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 1rem;
     display: block;
@@ -93,7 +93,7 @@
         border-radius: 0;
     }
     .nav-links a{
-        color: #201f22;
+        color: #000000;
     }
     .nav-links.show {
         transform: translateY(0);

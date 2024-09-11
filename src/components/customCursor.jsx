@@ -26,7 +26,9 @@ const CustomCursor = () => {
     cursorSecondaryRef.current = cursorSecondary;
 
     const updateTargetPosition = (event) => {
-      targetPosition.current = { x: event.clientX, y: event.clientY };
+      // Adiciona o deslocamento de rolagem ao cálculo da posição
+      const { scrollX, scrollY } = window;
+      targetPosition.current = { x: event.clientX + scrollX, y: event.clientY + scrollY };
     };
 
     const updateCursorPosition = () => {

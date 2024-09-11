@@ -1,8 +1,8 @@
-
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useState } from 'react';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ( prop ) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,17 +11,17 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">Ver Turma</div>
+      <div className="logo" >{prop.name}</div>
       <div className="menu-toggle" onClick={toggleMenu}>
         <div className={`bar ${isOpen ? 'toggle' : ''}`}></div>
         <div className={`bar ${isOpen ? 'toggle' : ''}`}></div>
         <div className={`bar ${isOpen ? 'toggle' : ''}`}></div>
       </div>
       <ul className={`nav-links ${isOpen ? 'show' : ''}`}>
-        <li><a href="#VerTurma">Turmas</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="../../Index.html">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="../../Home.html" className="bi bi-search"></a></li>
       </ul>
     </nav>
   );

@@ -1,8 +1,7 @@
 
 .footer {
-    background-color: #201f22;
-    /* Preto */
-    color: white;
+    background-color: #212121;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 1rem;
     position: fixed;

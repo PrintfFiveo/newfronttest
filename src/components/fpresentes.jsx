@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import FetchData from './get'; // Certifique-se de que o caminho está correto
-import './searchBar.css'; // Certifique-se de que o caminho está correto
+import FetchData from './searchpre';
+import './searchBar.css'; 
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
@@ -27,7 +27,7 @@ const SearchBar = () => {
       />
       <button onClick={handleSearchClick}>Search</button>
       {searchClicked && query && (
-        <FetchData title="Turma" endpoint={`turmas/search/${query}`} />
+        <FetchData title={`Presente da Turma ${query}`}  endpoint={`presentes/${query}`} />
       )}
     </div>
   );

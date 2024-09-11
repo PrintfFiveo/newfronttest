@@ -4,6 +4,9 @@
     align-items: center;
     margin: 20px;
 }
+.aa{
+    content: "\F52A";
+}
 
 input[type="text"] {
     width: 100%;
