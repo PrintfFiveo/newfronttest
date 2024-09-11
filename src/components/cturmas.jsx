@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './turmas.css'; // Certifique-se de que o caminho está correto
+import './turmas.css';
 
 const BASE_URL = 'http://localhost/api/turmas';
 

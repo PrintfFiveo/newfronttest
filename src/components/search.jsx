@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import FetchData from './get'; // Certifique-se de que o caminho está correto
-import './searchBar.css'; // Certifique-se de que o caminho está correto
+import FetchData from './get';
+import './searchBar.css';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
