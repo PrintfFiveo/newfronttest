@@ -1,0 +1,95 @@
+/* src/styles/Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #201f22;
+    /* Roxo lilás */
+    color: rgb(0, 0, 0);
+    position: relative;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 30px;
+    height: 21px;
+}
+
+.navbar .menu-toggle .bar {
+    background-color: white;
+    height: 3px;
+    width: 30px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.navbar .menu-toggle .bar.toggle:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.navbar .menu-toggle .bar.toggle:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar .menu-toggle .bar.toggle:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-links.show {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    /* Ajuste conforme necessário */
+    right: 0;
+    background-color: #260574;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #2b026e;
+
+}
+
+@media (max-width: 768px) {
+    .navbar .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        background-color: #370685;
+    }
+
+    .nav-links.show {
+        transform: translateY(0);
+    }
+}

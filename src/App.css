@@ -1,0 +1,156 @@
+/* Reseta margens, padding e define box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define altura mínima e estilo básico para o body */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to right, #999999, #868686);
+  /* Preto e roxo */
+  color: #40078b;
+  /* Cor clara para o texto */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container principal para empurrar o rodapé para baixo */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos do cabeçalho e navbar */
+.header {
+  background: #212121;
+  /* Preto escuro */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #d1cdcd;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: #000000;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #3d3b3b;
+  /* Roxo mais claro */
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background: #f0f0f0;
+  height: 2px;
+  width: 20px;
+  margin: 4px 0;
+}
+
+/* Seção principal */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #333;
+  /* Fundo escuro para contraste */
+  color: #050000;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Estilos das seções */
+.section {
+  padding: 2rem;
+  margin: 1rem 0;
+  background: #212121;
+  color: #f0f0f0;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+}
+
+/* Estilos do rodapé */
+.footer {
+  background-color: #212121;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #212121;
+    padding: 1rem;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid #333;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    border-bottom: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

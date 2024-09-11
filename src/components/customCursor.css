@@ -1,0 +1,30 @@
+.cursor {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-primary {
+    width: 8px;
+    height: 8px;
+    background-color: #5010b8a6;
+   
+    z-index: 1000;
+}
+
+.cursor-secondary {
+    width: 25px;
+   
+    height: 25px;
+    border: 2px solid #9406d634;
+   
+    background-color: rgba(205, 207, 206, 0.075);
+    z-index: 999;
+}
+@media (max-width: 768px) {
+
+    .cursor-primary,
+    .cursor-secondary {
+        display: none;
+    }}
