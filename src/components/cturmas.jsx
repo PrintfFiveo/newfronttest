@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import './turmas.css';
 
-const BASE_URL = 'http://localhost/api/turmas';
+const BASE_URL = 'https://grand-newt-enhanced.ngrok-free.app/api/';
 
 const PostTurmas = () => {
   const [turmaName, setTurmaName] = useState('');

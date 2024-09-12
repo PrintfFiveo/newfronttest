@@ -11,7 +11,7 @@ const PostPresence = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost/api/presentes', { user_id: userId });
+      const response = await axios.post('https://grand-newt-enhanced.ngrok-free.app/api/presentes', { user_id: userId });
       setSuccess('Presença registrada com sucesso!');
       setError('');
     } catch (err) {
