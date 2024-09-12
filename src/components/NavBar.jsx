@@ -18,10 +18,10 @@ const Navbar = ( prop ) => {
         <div className={`bar ${isOpen ? 'toggle' : ''}`}></div>
       </div>
       <ul className={`nav-links ${isOpen ? 'show' : ''}`}>
-        <li><a href="../../Index.html">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="../../Home.html" className="bi bi-search"></a></li>
+        <li><a href="/frontendexpo/search" className="bi bi-search"></a></li>
       </ul>
     </nav>
   );

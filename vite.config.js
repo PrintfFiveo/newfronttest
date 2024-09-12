@@ -1,18 +1,15 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-   build: {
-    rollupOptions: {
-      input: {
-        Home: 'src/Home/Home.jsx',
-        Presencas: 'src/Presencas/Presencas.jsx',
-        Postagem: 'src/Postagem/Postagem.jsx',
-      },
-    
-    },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
   },
-  base: '/frontendexpo/',
+  server: {
+    port: 3000,
+    open: true,
+  },
+  base: '/frontendexpo'
 });
