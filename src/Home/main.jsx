@@ -10,6 +10,7 @@ const root = createRoot(document.getElementById('root'));
 root.render(
   <Router>
     <Routes>
+      <Route path="/" element={<Home />} />
       <Route path="/frontendexpo" element={<Home />} />
       <Route path="/frontendexpo/Search" element={<App/>} />
       <Route path="/Home2" element={<Home2 />} />
