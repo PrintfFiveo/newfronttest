@@ -10,7 +10,7 @@ root.render(
     <Routes>
       <Route path='/' element={<App2 />} />
       <Route path='/frontendexpo' element={<App2 />} />
-      <Route path="/Search" element={<App />} />
+      <Route path="/search" element={<App />} />
 
     </Routes>
   </Router>
