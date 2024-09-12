@@ -11,7 +11,7 @@ const Login = ({ setToken, switchToRegister }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost/api/login', { email, password });
+      const response = await axios.post('https://grand-newt-enhanced.ngrok-free.app/api/login', { email, password });
       const token = response.data.token;
       setToken(token);
       localStorage.setItem('authToken', token);

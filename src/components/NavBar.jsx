@@ -19,10 +19,6 @@ const Navbar = ( prop ) => {
       </div>
       <ul className={`nav-links ${isOpen ? 'show' : ''}`}>
         <li><a href="/">Home</a></li>
-         <li><a href="/frontendexpo">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="/frontendexpo/search" className="bi bi-search"></a></li>
          <li><a href="/search" className="bi bi-search"></a></li>
       </ul>
     </nav>

@@ -29,7 +29,7 @@
     width: 30px;
     margin: 3px 0;
     transition: 0.3s;
-    color: #ffffff;
+    color: #000000;
 }
 
 .navbar .menu-toggle .bar.toggle:nth-child(1) {

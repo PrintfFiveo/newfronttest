@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './get.css'; 
 
-const BASE_URL = 'http://localhost/api/';
+const BASE_URL = 'https://grand-newt-enhanced.ngrok-free.app/api/';
 
 const formatTimestampAsync = async (timestamp) => {
   return new Promise((resolve) => {
