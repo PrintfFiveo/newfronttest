@@ -14,7 +14,7 @@ const Register = ({ switchToLogin }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://grand-newt-enhanced.ngrok-free.app/api/', { email, name, password, turma_id });
+      const response = await axios.post('https://grand-newt-enhanced.ngrok-free.app/api/user', { email, name, password, turma_id });
       
       
       console.log('Resposta da API:', response.data);
