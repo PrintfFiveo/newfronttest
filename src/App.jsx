@@ -23,7 +23,7 @@ function App() {
             <h1>Pesquisar Presença Por Turma</h1>
              <Searchpre></Searchpre>
              <Cturmas></Cturmas>
-         <Cturmas2></Cturmas2>
+             <Cturmas2></Cturmas2>
              
 
       </main>
