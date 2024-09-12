@@ -14,5 +14,5 @@ export default defineConfig({
     
     },
   },
-  base: '/FrontendExpo',
+  base: '/frontendexpo',
 });
