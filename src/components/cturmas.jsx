@@ -1,80 +1,90 @@
-import { useState } from 'react';
-import axios from 'axios';
-import './turmas.css';
+import  { useState } from 'react';
 
-const BASE_URL = 'https://grand-newt-enhanced.ngrok-free.app/api/';
+const SubmitForm = () => {
 
-const PostTurmas = () => {
   const [turmaName, setTurmaName] = useState('');
   const [turmaAno, setTurmaAno] = useState('');
   const [ano, setAno] = useState('');
   const [turma, setTurma] = useState('');
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError('');
-    setResponse(null);
+
+    // Validação simples
+    if (!turmaName || !turmaAno || !ano || isNaN(ano) || ano.length !== 1) {
+      alert('Preencha todos os campos corretamente!');
+      return;
+    }
+
+    // Dados a serem enviados
+    const data = {
+      turma_name: turmaName,
+      turma_ano: turmaAno,
+      ano: parseInt(ano, 10), // Convertendo para inteiro
+      turma: turma,
+    };
 
     try {
-      const result = await axios.post(BASE_URL, {
-        turma_name: turmaName,
-        turma_ano: turmaAno,
-        ano: ano,
-        turma: turma,
+    
+      const response = await fetch('https://grand-newt-enhanced.ngrok-free.app/api/turmas', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
 
-      setResponse(result.data);
-    } catch (err) {
-      console.error('Erro ao criar turma:', err.response ? err.response.data : err.message);
-      setError('Falha ao criar turma. Tente novamente.');
-    } finally {
-      setLoading(false);
+      // Verificando a resposta
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Resposta da API:', result);
+        alert('Dados enviados com sucesso!');
+      } else {
+        console.error('Erro na requisição:', response.statusText);
+        alert('Erro ao enviar dados.');
+      }
+    } catch (error) {
+      console.error('Erro na requisição:', error);
+      alert('Erro ao enviar dados.');
     }
   };
 
   return (
-    <div className="post-turmas-container">
-      <form onSubmit={handleSubmit} className="post-turmas-form">
-        <h2>Criar Turma</h2>
-        <input
-          type="text"
-          value={turmaName}
-          onChange={(e) => setTurmaName(e.target.value)}
-          placeholder="Nome da Turma"
-          required
-        />
-        <input
-          type="text"
-          value={turmaAno}
-          onChange={(e) => setTurmaAno(e.target.value)}
-          placeholder="Ano da Turma"
-          required
-        />
-        <input
-          type="number"
-          value={ano}
-          onChange={(e) => setAno(e.target.value)}
-          placeholder="Ano"
-          required
-        />
-        
-        <button type="submit" disabled={loading}>
-          {loading ? 'Criando...' : 'Criar Turma'}
-        </button>
-        {error && <p className="error-message">{error}</p>}
-        {response && (
-          <div className="response-data">
-            <h3>Resposta:</h3>
-            <pre>{JSON.stringify(response, null, 2)}</pre>
-          </div>
-        )}
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>
+          Nome da Turma:
+          <input
+            type="text"
+            value={turmaName}
+            onChange={(e) => setTurmaName(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Ano da Turma:
+          <input
+            type="text"
+            value={turmaAno}
+            onChange={(e) => setTurmaAno(e.target.value)}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Ano (único dígito):
+          <input
+            type="text"
+            value={ano}
+            onChange={(e) => setAno(e.target.value)}
+          />
+        </label>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
   );
 };
 
-export default PostTurmas;
+export default SubmitForm;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './get.css';
+import './get.css'; 
 
 const BASE_URL = 'https://grand-newt-enhanced.ngrok-free.app/api/';
 
@@ -30,8 +30,10 @@ const FlexibleTable = ({ endpoint, title }) => {
           headers: {
             'ngrok-skip-browser-warning': 'true',
           },
-        });
+        } 
 
+        );
+        
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -83,10 +85,10 @@ const FlexibleTable = ({ endpoint, title }) => {
           <tbody>
             {data.map((row, index) => (
               <tr key={index}>
-                {Object.entries(row).map(async ([key, value], idx) => (
+                {Object.entries(row).map(([key, value], idx) => (
                   <td key={idx}>
                     {key.toLowerCase().includes('timestamp') ? (
-                      <span>{await formatTimestamp(value)}</span>
+                      <span>{formatTimestamp(value)}</span>
                     ) : (
                       value
                     )}
