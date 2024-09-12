@@ -22,7 +22,7 @@ const App = () => {
     <Router basename='/frontendexpo'>
       <Routes>
         <Route
-          path="/"
+          path="/frontendexpo"
           element={isLoggedIn ? <Home /> : <Navigate to="/login" />}
         />
         <Route
