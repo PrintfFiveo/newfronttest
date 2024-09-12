@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Presentes from './components/presentes'
 import Searchpre from './components/fpresentes'
 import Cturmas from './components/cturmas'
+import Cturmas2 from './components/search2'
 function App() {
    return (
    
@@ -22,6 +23,8 @@ function App() {
             <h1>Pesquisar Presença Por Turma</h1>
              <Searchpre></Searchpre>
              <Cturmas></Cturmas>
+         <Cturmas2></Cturmas2>
+             
 
       </main>
       <Footer />
