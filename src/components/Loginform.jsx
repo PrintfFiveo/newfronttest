@@ -26,7 +26,7 @@ const Login = ({ setToken, switchToRegister }) => {
       <form className="login-form" onSubmit={handleSubmit}>
         <h2>Login</h2>
         <p>*não é obrigatorio*</p>
-        <p>apenas demonstrativo</p>
+        
 
         <br></br>
         <a>vá para o icone de lupa para pular esta parte</a>
