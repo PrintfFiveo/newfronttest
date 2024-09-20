@@ -1,12 +1,14 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import './FormComponent.css';
+
 
 const Register = ({ switchToLogin }) => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [turma_id, setTurmaId] = useState('');
+  const [class_id, setClassId] = useState('');
+  const [ra, setRa] = useState('');
+  const [period, setPeriod] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -14,12 +16,17 @@ const Register = ({ switchToLogin }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://grand-newt-enhanced.ngrok-free.app/api/user', { email, name, password, turma_id });
-      
-      
+      const response = await axios.post('https://grand-newt-enhanced.ngrok-free.app/api/user', { 
+        email, 
+        name, 
+        password, 
+        class_id, 
+        ra, 
+        period 
+      });
+
       console.log('Resposta da API:', response.data);
-      
-  
+
       if (response.data && response.data.id) {
         setSuccess('Registro bem-sucedido! Você pode fazer login agora.');
         setError('');
@@ -28,7 +35,6 @@ const Register = ({ switchToLogin }) => {
         setSuccess('Registro Sucedido!');
       }
     } catch (err) {
-      
       console.error('Erro ao registrar:', err.response ? err.response.data : err.message);
       setError('Falha ao registrar. Verifique os detalhes e tente novamente.');
     }
@@ -61,9 +67,23 @@ const Register = ({ switchToLogin }) => {
         />
         <input
           type="text"
-          value={turma_id}
-          onChange={(e) => setTurmaId(e.target.value)}
-          placeholder="Turma ID"
+          value={class_id}
+          onChange={(e) => setClassId(e.target.value)}
+          placeholder="Class ID"
+          required
+        />
+        <input
+          type="text"
+          value={ra}
+          onChange={(e) => setRa(e.target.value)}
+          placeholder="RA"
+          required
+        />
+        <input
+          type="text"
+          value={period}
+          onChange={(e) => setPeriod(e.target.value)}
+          placeholder="Período"
           required
         />
         <button type="submit">Registrar</button>
