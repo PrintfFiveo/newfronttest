@@ -3,7 +3,7 @@ import axios from 'axios';
 import './get.css';
 
 const PostPresence = () => {
-  const [userId, setUserId] = useState('');
+  const [studentId, setStudentId] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
@@ -11,7 +11,7 @@ const PostPresence = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://grand-newt-enhanced.ngrok-free.app/api/presentes', { user_id: userId });
+      const response = await axios.post('https://grand-newt-enhanced.ngrok-free.app/api/presentes', { student_id: studentId });
       setSuccess('Presença registrada com sucesso!');
       setError('');
     } catch (err) {
@@ -26,8 +26,8 @@ const PostPresence = () => {
         <h2>Registrar Presença</h2>
         <input
           type="text"
-          value={userId}
-          onChange={(e) => setUserId(e.target.value)}
+          value={studentId}
+          onChange={(e) => setStudentId(e.target.value)}
           placeholder="ID do Usuário"
           required
         />
