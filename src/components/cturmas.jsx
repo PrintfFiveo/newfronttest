@@ -1,32 +1,27 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 
 const SubmitForm = () => {
-
-  const [turmaName, setTurmaName] = useState('');
-  const [turmaAno, setTurmaAno] = useState('');
-  const [ano, setAno] = useState('');
-  const [turma, setTurma] = useState('');
-
+  const [className, setClassName] = useState('');
+  const [classYear, setClassYear] = useState('');
+  const [year, setYear] = useState('');
+  const [classData, setClassData] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Validação simples
-    if (!turmaName || !turmaAno || !ano || isNaN(ano) || ano.length !== 1) {
+    if (!className || !classYear || !year || isNaN(year) || year.length !== 1) {
       alert('Preencha todos os campos corretamente!');
       return;
     }
 
-    // Dados a serem enviados
     const data = {
-      turma_name: turmaName,
-      turma_ano: turmaAno,
-      ano: parseInt(ano, 10), // Convertendo para inteiro
-      turma: turma,
+      class_name: className,
+      class_year: classYear,
+      year: parseInt(year, 10),
+      class: classData,
     };
 
     try {
-    
       const response = await fetch('https://grand-newt-enhanced.ngrok-free.app/api/turmas', {
         method: 'POST',
         headers: {
@@ -35,7 +30,6 @@ const SubmitForm = () => {
         body: JSON.stringify(data),
       });
 
-      // Verificando a resposta
       if (response.ok) {
         const result = await response.json();
         console.log('Resposta da API:', result);
@@ -57,8 +51,8 @@ const SubmitForm = () => {
           Nome da Turma:
           <input
             type="text"
-            value={turmaName}
-            onChange={(e) => setTurmaName(e.target.value)}
+            value={className}
+            onChange={(e) => setClassName(e.target.value)}
           />
         </label>
       </div>
@@ -67,8 +61,8 @@ const SubmitForm = () => {
           Ano da Turma:
           <input
             type="text"
-            value={turmaAno}
-            onChange={(e) => setTurmaAno(e.target.value)}
+            value={classYear}
+            onChange={(e) => setClassYear(e.target.value)}
           />
         </label>
       </div>
@@ -77,8 +71,8 @@ const SubmitForm = () => {
           Ano (único dígito):
           <input
             type="text"
-            value={ano}
-            onChange={(e) => setAno(e.target.value)}
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
           />
         </label>
       </div>
